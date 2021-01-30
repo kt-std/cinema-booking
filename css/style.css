@@ -85,8 +85,14 @@
     -moz-appearance: none;    
     -webkit-appearance: none;
     appearance: none;
-    height: 0;
-    width: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    /*
+    margin:-1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);*/
+    position: absolute;
 }
 
 .seat__number{
@@ -100,6 +106,9 @@
     display: flex;
     background-color: #222;
     color: #555;
+    -moz-appearance: none;    
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .seat:checked ~ .seat__number {
@@ -112,6 +121,9 @@
     background-color: var(--disabled-bg-color);
 }
 .seat:focus ~ .seat__number {
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 0 10px var(--checked-bg-color);
+    -moz-box-shadow: 0 0 10px var(--checked-bg-color);
     box-shadow: 0 0 10px var(--checked-bg-color);
 }
 

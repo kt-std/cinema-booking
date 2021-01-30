@@ -11,11 +11,16 @@
 
   <body>
     <article class="movie">
-      <div class="movie__info">
         <section class="movie__media column">
           <img src="poster.jpg" alt="Alien(1979) poster" class="movie__image" />
           <button class="movie__play-button"></button>
         </section>
+        <header class="movie__heading row">
+          <h1 class="movie__title">Alien</h1>
+          <span class="time__container">
+            <time datetime="PT1H57M">1h 57m</time>
+          </span>
+        </header>
         <section class="movie__data">
           <dl class="info__list">
             <dt class="info__heading">Director</dt>
@@ -34,408 +39,399 @@
             </dd>
           </dl>
         </section>
-      </div>
+        <section class="movie__booking">
+            <form class="booking__form">  
+                <!---- date --->
+                <fieldset class="date__set" id="date">
+                  <legend>Date</legend>
+                  <input type="radio" id="d202r102-01" name="date" value="202r102-01" />
+                  <label for="d202r102-01" class="date__label">
+                    <time datetime="202r102-01">
+                      <span class="month">Feb</span> <span class="day">01</span>
+                    </time>
+                  </label>
+                  <input type="radio" id="d202r102-02" name="date" value="202r102-02" />
+                  <label for="d202r102-02" class="date__label">
+                    <time datetime="202r102-02">
+                      <span class="month">Feb</span> <span class="day">02</span>
+                    </time>
+                  </label>
+                  <input type="radio" id="d202r102-03" name="date" value="202r102-03" />
+                  <label for="d202r102-03" class="date__label">
+                    <time datetime="202r102-03">
+                      <span class="month">Feb</span> <span class="day">03</span>
+                    </time>
+                  </label>
+                  <input type="radio" id="d202r102-04" name="date" value="202r102-04" />
+                  <label for="d202r102-04" class="date__label">
+                    <time datetime="202r102-04">
+                      <span class="month">Feb</span> <span class="day">04</span>
+                    </time>
+                  </label>
+                  <input type="radio" id="d202r102-05" name="date" value="202r102-05" />
+                  <label for="d202r102-05" class="date__label">
+                    <time datetime="202r102-05">
+                      <span class="month">Feb</span> <span class="day">05</span>
+                    </time>
+                  </label>
+                  <input type="radio" id="d202r102-06" name="date" value="202r102-06" />
+                  <label for="d202r102-06" class="date__label">
+                    <time datetime="202r102-06">
+                      <span class="month">Feb</span> <span class="day">06</span>
+                    </time>
+                  </label>
+                  <input type="radio" id="d202r102-07" name="date" value="202r102-07" />
+                  <label for="d202r102-07" class="date__label">
+                    <time datetime="202r102-07">
+                      <span class="month">Feb</span> <span class="day">07</span>
+                    </time>
+                  </label>
+                </fieldset>
 
-      <section class="movie__booking">
+                <!---- time --->
+                <fieldset class="time__set" id="time">
+                  <legend>Time</legend>
+                  <input type="radio" name="time" value="21:00" id="t2r100">
+                  <label for="t2r100" class="time__label">
+                    <time datetime="21:00">
+                        <span class="type">3D</span> <span class="time">21:00</span>
+                    </time>
+                  </label>
+                  <input type="radio" name="time" value="22:00" id="t22-00">
+                  <label for="t22-00" class="time__label">
+                    <time datetime="22:00">
+                        <span class="type">3D</span> <span class="time">22:00</span>
+                    </time>
+                  </label>
+                  <input type="radio" name="time" value="23:00" id="t23-00">
+                  <label for="t23-00" class="time__label">
+                    <time datetime="23:00">
+                        <span class="type">3D</span> <span class="time">23:00</span>
+                    </time>
+                  </label>
+                  <input type="radio" name="time" value="24:00" id="t24-00">
+                  <label for="t24-00" class="time__label">
+                    <time datetime="24:00">
+                        <span class="type">3D</span> <span class="time">24:00</span>
+                    </time>
+                  </label>              
+                </fieldset>
 
-        <header class="movie__heading row">
-          <h1 class="movie__title">Alien</h1>
-          <span class="time__container">
-            <time datetime="PT1H57M">1h 57m</time>
-          </span>
-        </header>
+                <!---- seats --->
+                <fieldset class="seats_set">
+                  <!---- row 1 --->
+                  <label for="r1_1" class="seat__label r11 first-seat" data-row="1" data-seat="1">
+                    <input type="checkbox" class="seat" id="r1_1">
+                    <span class="seat__number">1</span>
+                  </label>
+                  <label for="r1_2" class="seat__label r12" data-row="1" data-seat="2" >
+                    <input type="checkbox" class="seat" id="r1_2" disabled>
+                    <span class="seat__number">2</span>
+                  </label>
+                  <label for="r1_3" class="seat__label r13" data-row="1" data-seat="3">
+                    <input type="checkbox" class="seat" id="r1_3">
+                    <span class="seat__number">3</span>
+                  </label>
+                  <label for="r1_4" class="seat__label r14" data-row="1" data-seat="4">
+                    <input type="checkbox" class="seat" id="r1_4">
+                    <span class="seat__number">4</span>
+                  </label>
+                  <label for="r1_5" class="seat__label r15" data-row="1" data-seat="5">
+                    <input type="checkbox" class="seat" id="r1_5">
+                    <span class="seat__number">5</span>
+                  </label>
+                  <label for="r1_6" class="seat__label r16" data-row="1" data-seat="6">
+                    <input type="checkbox" class="seat" id="r1_6">
+                    <span class="seat__number">6</span>
+                  </label>
+                  <label for="r1_7" class="seat__label r17" data-row="1" data-seat="7">
+                    <input type="checkbox" class="seat" id="r1_7" disabled>
+                    <span class="seat__number">7</span>
+                  </label>
+                  <label for="r1_8" class="seat__label r18 last-seat" data-row="1" data-seat="8">
+                    <input type="checkbox" class="seat" id="r1_8">
+                    <span class="seat__number">8</span>
+                  </label>
 
-        <main>
-        <form class="booking__form">  
-          <div class="row">
-            <fieldset class="date__set" id="date">
-              <legend>Choose date</legend>
-              <input type="radio" id="d202r102-01" name="date" value="202r102-01" />
-              <label for="d202r102-01" class="date__label">
-                <time datetime="202r102-01">
-                  <span class="month">Feb</span> <span class="day">01</span>
-                </time>
-              </label>
-              <input type="radio" id="d202r102-02" name="date" value="202r102-02" />
-              <label for="d202r102-02" class="date__label">
-                <time datetime="202r102-02">
-                  <span class="month">Feb</span> <span class="day">02</span>
-                </time>
-              </label>
-              <input type="radio" id="d202r102-03" name="date" value="202r102-03" />
-              <label for="d202r102-03" class="date__label">
-                <time datetime="202r102-03">
-                  <span class="month">Feb</span> <span class="day">03</span>
-                </time>
-              </label>
-              <input type="radio" id="d202r102-04" name="date" value="202r102-04" />
-              <label for="d202r102-04" class="date__label">
-                <time datetime="202r102-04">
-                  <span class="month">Feb</span> <span class="day">04</span>
-                </time>
-              </label>
-              <input type="radio" id="d202r102-05" name="date" value="202r102-05" />
-              <label for="d202r102-05" class="date__label">
-                <time datetime="202r102-05">
-                  <span class="month">Feb</span> <span class="day">05</span>
-                </time>
-              </label>
-              <input type="radio" id="d202r102-06" name="date" value="202r102-06" />
-              <label for="d202r102-06" class="date__label">
-                <time datetime="202r102-06">
-                  <span class="month">Feb</span> <span class="day">06</span>
-                </time>
-              </label>
-              <input type="radio" id="d202r102-07" name="date" value="202r102-07" />
-              <label for="d202r102-07" class="date__label">
-                <time datetime="202r102-07">
-                  <span class="month">Feb</span> <span class="day">07</span>
-                </time>
-              </label>
-            </fieldset>
+                  <!---- row 2 --->
+                  <label for="r2_1" class="seat__label r21 first-seat" data-row="2" data-seat="1">
+                    <input type="checkbox" class="seat" id="r2_1">
+                    <span class="seat__number">1</span>
+                  </label>
+                  <label for="r2_2" class="seat__label r22" data-row="2" data-seat="2">
+                    <input type="checkbox" class="seat" id="r2_2">
+                    <span class="seat__number">2</span>
+                  </label>
+                  <label for="r2_3" class="seat__label r23" data-row="2" data-seat="3">
+                    <input type="checkbox" class="seat" id="r2_3">
+                    <span class="seat__number">3</span>
+                  </label>
+                  <label for="r2_4" class="seat__label r24" data-row="2" data-seat="4">
+                    <input type="checkbox" class="seat" id="r2_4">
+                    <span class="seat__number">4</span>
+                  </label>
+                  <label for="r2_5" class="seat__label r25" data-row="2" data-seat="5">
+                    <input type="checkbox" class="seat" id="r2_5">
+                    <span class="seat__number">5</span>
+                  </label>
+                  <label for="r2_6" class="seat__label r26" data-row="2" data-seat="6">
+                    <input type="checkbox" class="seat" id="r2_6">
+                    <span class="seat__number">6</span>
+                  </label>
+                  <label for="r2_7" class="seat__label r27" data-row="2" data-seat="7">
+                    <input type="checkbox" class="seat" id="r2_7">
+                    <span class="seat__number">7</span>
+                  </label>
+                  <label for="r2_8" class="seat__label r28" data-row="2" data-seat="8">
+                    <input type="checkbox" class="seat" id="r2_8">
+                    <span class="seat__number">8</span>
+                  </label>
+                  <label for="r2_9" class="seat__label r29" data-row="2" data-seat="9">
+                    <input type="checkbox" class="seat" id="r2_9">
+                    <span class="seat__number">9</span>
+                  </label>
+                  <label for="r2_10" class="seat__label r210" data-row="2" data-seat="10">
+                    <input type="checkbox" class="seat" id="r2_10">
+                    <span class="seat__number">10</span>
+                  </label>
+                  <label for="r2_11" class="seat__label r211" data-row="2" data-seat="11">
+                    <input type="checkbox" class="seat" id="r2_11">
+                    <span class="seat__number">11</span>
+                  </label>
+                  <label for="r2_12" class="seat__label r212 last-seat" data-row="2" data-seat="12">
+                    <input type="checkbox" class="seat" id="r2_12">
+                    <span class="seat__number">12</span>
+                  </label>
 
-            <fieldset class="time__set" id="time">
-              <legend>Choose time</legend>
-              <input type="radio" name="time" value="21:00" id="t2r100">
-              <label for="t2r100" class="time__label">
-                <time datetime="21:00">
-                    <span class="type">3D</span> <span class="time">21:00</span>
-                </time>
-              </label>
-              <input type="radio" name="time" value="22:00" id="t22-00">
-              <label for="t22-00" class="time__label">
-                <time datetime="22:00">
-                    <span class="type">3D</span> <span class="time">22:00</span>
-                </time>
-              </label>
-              <input type="radio" name="time" value="23:00" id="t23-00">
-              <label for="t23-00" class="time__label">
-                <time datetime="23:00">
-                    <span class="type">3D</span> <span class="time">23:00</span>
-                </time>
-              </label>
-              <input type="radio" name="time" value="24:00" id="t24-00">
-              <label for="t24-00" class="time__label">
-                <time datetime="24:00">
-                    <span class="type">3D</span> <span class="time">24:00</span>
-                </time>
-              </label>              
-            </fieldset>
-          </div>
-          <fieldset class="seats_set">
-              <label for="r1_1" class="seat__label r11 first-seat" data-row="1" data-seat="1">
-                <input type="checkbox" class="seat" id="r1_1">
-                <span class="seat__number">1</span>
-              </label>
-              <label for="r1_2" class="seat__label r12" data-row="1" data-seat="2" >
-                <input type="checkbox" class="seat" id="r1_2" disabled>
-                <span class="seat__number">2</span>
-              </label>
-              <label for="r1_3" class="seat__label r13" data-row="1" data-seat="3">
-                <input type="checkbox" class="seat" id="r1_3">
-                <span class="seat__number">3</span>
-              </label>
-              <label for="r1_4" class="seat__label r14" data-row="1" data-seat="4">
-                <input type="checkbox" class="seat" id="r1_4">
-                <span class="seat__number">4</span>
-              </label>
-              <label for="r1_5" class="seat__label r15" data-row="1" data-seat="5">
-                <input type="checkbox" class="seat" id="r1_5">
-                <span class="seat__number">5</span>
-              </label>
-              <label for="r1_6" class="seat__label r16" data-row="1" data-seat="6">
-                <input type="checkbox" class="seat" id="r1_6">
-                <span class="seat__number">6</span>
-              </label>
-              <label for="r1_7" class="seat__label r17" data-row="1" data-seat="7">
-                <input type="checkbox" class="seat" id="r1_7" disabled>
-                <span class="seat__number">7</span>
-              </label>
-              <label for="r1_8" class="seat__label r18 last-seat" data-row="1" data-seat="8">
-                <input type="checkbox" class="seat" id="r1_8">
-                <span class="seat__number">8</span>
-              </label>
+                  <!---- row 3 --->
+                  <label for="r3_1" class="seat__label r31 first-seat" data-row="3" data-seat="1">
+                    <input type="checkbox" class="seat" id="r3_1">
+                    <span class="seat__number">1</span>
+                  </label>
+                  <label for="r3_2" class="seat__label r32" data-row="3" data-seat="2">
+                    <input type="checkbox" class="seat" id="r3_2">
+                    <span class="seat__number">2</span>
+                  </label>
+                  <label for="r3_3" class="seat__label r33" data-row="3" data-seat="3">
+                    <input type="checkbox" class="seat" id="r3_3">
+                    <span class="seat__number">3</span>
+                  </label>
+                  <label for="r3_4" class="seat__label r34" data-row="3" data-seat="4">
+                    <input type="checkbox" class="seat" id="r3_4">
+                    <span class="seat__number">4</span>
+                  </label>
+                  <label for="r3_5" class="seat__label r35" data-row="3" data-seat="5">
+                    <input type="checkbox" class="seat" id="r3_5">
+                    <span class="seat__number">5</span>
+                  </label>
+                  <label for="r3_6" class="seat__label r36" data-row="3" data-seat="6">
+                    <input type="checkbox" class="seat" id="r3_6">
+                    <span class="seat__number">6</span>
+                  </label>
+                  <label for="r3_7" class="seat__label r37" data-row="3" data-seat="7">
+                    <input type="checkbox" class="seat" id="r3_7">
+                    <span class="seat__number">7</span>
+                  </label>
+                  <label for="r3_8" class="seat__label r38 last-seat" data-row="3" data-seat="8">
+                    <input type="checkbox" class="seat" id="r3_8">
+                    <span class="seat__number">8</span>
+                  </label>
 
-              <label for="r2_1" class="seat__label r21 first-seat" data-row="2" data-seat="1">
-                <input type="checkbox" class="seat" id="r2_1">
-                <span class="seat__number">1</span>
-              </label>
-              <label for="r2_2" class="seat__label r22" data-row="2" data-seat="2">
-                <input type="checkbox" class="seat" id="r2_2">
-                <span class="seat__number">2</span>
-              </label>
-              <label for="r2_3" class="seat__label r23" data-row="2" data-seat="3">
-                <input type="checkbox" class="seat" id="r2_3">
-                <span class="seat__number">3</span>
-              </label>
-              <label for="r2_4" class="seat__label r24" data-row="2" data-seat="4">
-                <input type="checkbox" class="seat" id="r2_4">
-                <span class="seat__number">4</span>
-              </label>
-              <label for="r2_5" class="seat__label r25" data-row="2" data-seat="5">
-                <input type="checkbox" class="seat" id="r2_5">
-                <span class="seat__number">5</span>
-              </label>
-              <label for="r2_6" class="seat__label r26" data-row="2" data-seat="6">
-                <input type="checkbox" class="seat" id="r2_6">
-                <span class="seat__number">6</span>
-              </label>
-              <label for="r2_7" class="seat__label r27" data-row="2" data-seat="7">
-                <input type="checkbox" class="seat" id="r2_7">
-                <span class="seat__number">7</span>
-              </label>
-              <label for="r2_8" class="seat__label r28" data-row="2" data-seat="8">
-                <input type="checkbox" class="seat" id="r2_8">
-                <span class="seat__number">8</span>
-              </label>
-              <label for="r2_9" class="seat__label r29" data-row="2" data-seat="9">
-                <input type="checkbox" class="seat" id="r2_9">
-                <span class="seat__number">9</span>
-              </label>
-              <label for="r2_10" class="seat__label r210" data-row="2" data-seat="10">
-                <input type="checkbox" class="seat" id="r2_10">
-                <span class="seat__number">10</span>
-              </label>
-              <label for="r2_11" class="seat__label r211" data-row="2" data-seat="11">
-                <input type="checkbox" class="seat" id="r2_11">
-                <span class="seat__number">11</span>
-              </label>
-              <label for="r2_12" class="seat__label r212 last-seat" data-row="2" data-seat="12">
-                <input type="checkbox" class="seat" id="r2_12">
-                <span class="seat__number">12</span>
-              </label>
+                  <!---- row 4 --->
+                  <label for="r4_1" class="seat__label r41 first-seat" data-row="4" data-seat="1">
+                    <input type="checkbox" class="seat" id="r4_1">
+                    <span class="seat__number">1</span>
+                  </label>
+                  <label for="r4_2" class="seat__label r42" data-row="4" data-seat="2">
+                    <input type="checkbox" class="seat" id="r4_2">
+                    <span class="seat__number">2</span>
+                  </label>
+                  <label for="r4_3" class="seat__label r43" data-row="4" data-seat="3">
+                    <input type="checkbox" class="seat" id="r4_3">
+                    <span class="seat__number">3</span>
+                  </label>
+                  <label for="r4_4" class="seat__label r44" data-row="4" data-seat="4">
+                    <input type="checkbox" class="seat" id="r4_4">
+                    <span class="seat__number">4</span>
+                  </label>
+                  <label for="r4_5" class="seat__label r45" data-row="4" data-seat="5">
+                    <input type="checkbox" class="seat" id="r4_5">
+                    <span class="seat__number">5</span>
+                  </label>
+                  <label for="r4_6" class="seat__label r46" data-row="4" data-seat="6">
+                    <input type="checkbox" class="seat" id="r4_6">
+                    <span class="seat__number">6</span>
+                  </label>
+                  <label for="r4_7" class="seat__label r47" data-row="4" data-seat="7">
+                    <input type="checkbox" class="seat" id="r4_7">
+                    <span class="seat__number">7</span>
+                  </label>
+                  <label for="r4_8" class="seat__label r48 last-seat" data-row="4" data-seat="8">
+                    <input type="checkbox" class="seat" id="r4_8">
+                    <span class="seat__number">8</span>
+                  </label>
 
+                  <!---- row 5 --->
+                  <label for="r5_1" class="seat__label r51 first-seat" data-row="5" data-seat="1">
+                    <input type="checkbox" class="seat" id="r5_1">
+                    <span class="seat__number">1</span>
+                  </label>
+                  <label for="r5_2" class="seat__label r52" data-row="5" data-seat="2">
+                    <input type="checkbox" class="seat" id="r5_2">
+                    <span class="seat__number">2</span>
+                  </label>
+                  <label for="r5_3" class="seat__label r53" data-row="5" data-seat="3">
+                    <input type="checkbox" class="seat" id="r5_3">
+                    <span class="seat__number">3</span>
+                  </label>
+                  <label for="r5_4" class="seat__label r54" data-row="5" data-seat="4">
+                    <input type="checkbox" class="seat" id="r5_4" disabled>
+                    <span class="seat__number">4</span>
+                  </label>
+                  <label for="r5_5" class="seat__label r55" data-row="5" data-seat="5">
+                    <input type="checkbox" class="seat" id="r5_5" disabled>
+                    <span class="seat__number">5</span>
+                  </label>
+                  <label for="r5_6" class="seat__label r56" data-row="5" data-seat="6">
+                    <input type="checkbox" class="seat" id="r5_6" disabled>
+                    <span class="seat__number">6</span>
+                  </label>
+                  <label for="r5_7" class="seat__label r57" data-row="5" data-seat="7">
+                    <input type="checkbox" class="seat" id="r5_7" disabled>
+                    <span class="seat__number">7</span>
+                  </label>
+                  <label for="r5_8" class="seat__label r58" data-row="5" data-seat="8">
+                    <input type="checkbox" class="seat" id="r5_8">
+                    <span class="seat__number">8</span>
+                  </label>
+                  <label for="r5_9" class="seat__label r59" data-row="5" data-seat="9">
+                    <input type="checkbox" class="seat" id="r5_9">
+                    <span class="seat__number">9</span>
+                  </label>
+                  <label for="r5_10" class="seat__label r510 last-seat" data-row="5" data-seat="10">
+                    <input type="checkbox" class="seat" id="r5_10">
+                    <span class="seat__number">10</span>
+                  </label>
 
+                  <!---- row 6--->
+                  <label for="r6_1" class="seat__label r61 first-seat" data-row="6" data-seat="1">
+                    <input type="checkbox" class="seat" id="r6_1">
+                    <span class="seat__number">1</span>
+                  </label>
+                  <label for="r6_2" class="seat__label r62" data-row="6" data-seat="2">
+                    <input type="checkbox" class="seat" id="r6_2">
+                    <span class="seat__number">2</span>
+                  </label>
+                  <label for="r6_3" class="seat__label r63" data-row="6" data-seat="3">
+                    <input type="checkbox" class="seat" id="r6_3">
+                    <span class="seat__number">3</span>
+                  </label>
+                  <label for="r6_4" class="seat__label r64" data-row="6" data-seat="4">
+                    <input type="checkbox" class="seat" id="r6_4">
+                    <span class="seat__number">4</span>
+                  </label>
+                  <label for="r6_5" class="seat__label r65" data-row="6" data-seat="5">
+                    <input type="checkbox" class="seat" id="r6_5">
+                    <span class="seat__number">5</span>
+                  </label>
+                  <label for="r6_6" class="seat__label r66" data-row="6" data-seat="6">
+                    <input type="checkbox" class="seat" id="r6_6">
+                    <span class="seat__number">6</span>
+                  </label>
+                  <label for="r6_7" class="seat__label r67" data-row="6" data-seat="7">
+                    <input type="checkbox" class="seat" id="r6_7">
+                    <span class="seat__number">7</span>
+                  </label>
+                  <label for="r6_8" class="seat__label r68" data-row="6" data-seat="8">
+                    <input type="checkbox" class="seat" id="r6_8">
+                    <span class="seat__number">8</span>
+                  </label>
+                  <label for="r6_9" class="seat__label r69" data-row="6" data-seat="9">
+                    <input type="checkbox" class="seat" id="r6_9">
+                    <span class="seat__number">9</span>
+                  </label>
+                  <label for="r6_10" class="seat__label r610 last-seat" data-row="6" data-seat="10">
+                    <input type="checkbox" class="seat" id="r6_10">
+                    <span class="seat__number">10</span>
+                  </label>
 
-              <label for="r3_1" class="seat__label r31 first-seat" data-row="3" data-seat="1">
-                <input type="checkbox" class="seat" id="r3_1">
-                <span class="seat__number">1</span>
-              </label>
-              <label for="r3_2" class="seat__label r32" data-row="3" data-seat="2">
-                <input type="checkbox" class="seat" id="r3_2">
-                <span class="seat__number">2</span>
-              </label>
-              <label for="r3_3" class="seat__label r33" data-row="3" data-seat="3">
-                <input type="checkbox" class="seat" id="r3_3">
-                <span class="seat__number">3</span>
-              </label>
-              <label for="r3_4" class="seat__label r34" data-row="3" data-seat="4">
-                <input type="checkbox" class="seat" id="r3_4">
-                <span class="seat__number">4</span>
-              </label>
-              <label for="r3_5" class="seat__label r35" data-row="3" data-seat="5">
-                <input type="checkbox" class="seat" id="r3_5">
-                <span class="seat__number">5</span>
-              </label>
-              <label for="r3_6" class="seat__label r36" data-row="3" data-seat="6">
-                <input type="checkbox" class="seat" id="r3_6">
-                <span class="seat__number">6</span>
-              </label>
-              <label for="r3_7" class="seat__label r37" data-row="3" data-seat="7">
-                <input type="checkbox" class="seat" id="r3_7">
-                <span class="seat__number">7</span>
-              </label>
-              <label for="r3_8" class="seat__label r38 last-seat" data-row="3" data-seat="8">
-                <input type="checkbox" class="seat" id="r3_8">
-                <span class="seat__number">8</span>
-              </label>
+                  <!---- row 7 --->
+                  <label for="r7_1" class="seat__label r71 first-seat" data-row="7" data-seat="1">
+                    <input type="checkbox" class="seat" id="r7_1">
+                    <span class="seat__number">1</span>
+                  </label>
+                  <label for="r7_2" class="seat__label r72" data-row="7" data-seat="2">
+                    <input type="checkbox" class="seat" id="r7_2">
+                    <span class="seat__number">2</span>
+                  </label>
+                  <label for="r7_3" class="seat__label r73" data-row="7" data-seat="3">
+                    <input type="checkbox" class="seat" id="r7_3">
+                    <span class="seat__number">3</span>
+                  </label>
+                  <label for="r7_4" class="seat__label r74" data-row="7" data-seat="4">
+                    <input type="checkbox" class="seat" id="r7_4">
+                    <span class="seat__number">4</span>
+                  </label>
+                  <label for="r7_5" class="seat__label r75" data-row="7" data-seat="5">
+                    <input type="checkbox" class="seat" id="r7_5">
+                    <span class="seat__number">5</span>
+                  </label>
+                  <label for="r7_6" class="seat__label r76 last-seat" data-row="7" data-seat="6">
+                    <input type="checkbox" class="seat" id="r7_6">
+                    <span class="seat__number">6</span>
+                  </label>
 
-
-              <label for="r4_1" class="seat__label r41 first-seat" data-row="4" data-seat="1">
-                <input type="checkbox" class="seat" id="r4_1">
-                <span class="seat__number">1</span>
-              </label>
-              <label for="r4_2" class="seat__label r42" data-row="4" data-seat="2">
-                <input type="checkbox" class="seat" id="r4_2">
-                <span class="seat__number">2</span>
-              </label>
-              <label for="r4_3" class="seat__label r43" data-row="4" data-seat="3">
-                <input type="checkbox" class="seat" id="r4_3">
-                <span class="seat__number">3</span>
-              </label>
-              <label for="r4_4" class="seat__label r44" data-row="4" data-seat="4">
-                <input type="checkbox" class="seat" id="r4_4">
-                <span class="seat__number">4</span>
-              </label>
-              <label for="r4_5" class="seat__label r45" data-row="4" data-seat="5">
-                <input type="checkbox" class="seat" id="r4_5">
-                <span class="seat__number">5</span>
-              </label>
-              <label for="r4_6" class="seat__label r46" data-row="4" data-seat="6">
-                <input type="checkbox" class="seat" id="r4_6">
-                <span class="seat__number">6</span>
-              </label>
-              <label for="r4_7" class="seat__label r47" data-row="4" data-seat="7">
-                <input type="checkbox" class="seat" id="r4_7">
-                <span class="seat__number">7</span>
-              </label>
-              <label for="r4_8" class="seat__label r48 last-seat" data-row="4" data-seat="8">
-                <input type="checkbox" class="seat" id="r4_8">
-                <span class="seat__number">8</span>
-              </label>
-
-
-              <label for="r5_1" class="seat__label r51 first-seat" data-row="5" data-seat="1">
-                <input type="checkbox" class="seat" id="r5_1">
-                <span class="seat__number">1</span>
-              </label>
-              <label for="r5_2" class="seat__label r52" data-row="5" data-seat="2">
-                <input type="checkbox" class="seat" id="r5_2">
-                <span class="seat__number">2</span>
-              </label>
-              <label for="r5_3" class="seat__label r53" data-row="5" data-seat="3">
-                <input type="checkbox" class="seat" id="r5_3">
-                <span class="seat__number">3</span>
-              </label>
-              <label for="r5_4" class="seat__label r54" data-row="5" data-seat="4">
-                <input type="checkbox" class="seat" id="r5_4" disabled>
-                <span class="seat__number">4</span>
-              </label>
-              <label for="r5_5" class="seat__label r55" data-row="5" data-seat="5">
-                <input type="checkbox" class="seat" id="r5_5" disabled>
-                <span class="seat__number">5</span>
-              </label>
-              <label for="r5_6" class="seat__label r56" data-row="5" data-seat="6">
-                <input type="checkbox" class="seat" id="r5_6" disabled>
-                <span class="seat__number">6</span>
-              </label>
-              <label for="r5_7" class="seat__label r57" data-row="5" data-seat="7">
-                <input type="checkbox" class="seat" id="r5_7" disabled>
-                <span class="seat__number">7</span>
-              </label>
-              <label for="r5_8" class="seat__label r58" data-row="5" data-seat="8">
-                <input type="checkbox" class="seat" id="r5_8">
-                <span class="seat__number">8</span>
-              </label>
-              <label for="r5_9" class="seat__label r59" data-row="5" data-seat="9">
-                <input type="checkbox" class="seat" id="r5_9">
-                <span class="seat__number">9</span>
-              </label>
-              <label for="r5_10" class="seat__label r510 last-seat" data-row="5" data-seat="10">
-                <input type="checkbox" class="seat" id="r5_10">
-                <span class="seat__number">10</span>
-              </label>
-
-
-              <label for="r6_1" class="seat__label r61 first-seat" data-row="6" data-seat="1">
-                <input type="checkbox" class="seat" id="r6_1">
-                <span class="seat__number">1</span>
-              </label>
-              <label for="r6_2" class="seat__label r62" data-row="6" data-seat="2">
-                <input type="checkbox" class="seat" id="r6_2">
-                <span class="seat__number">2</span>
-              </label>
-              <label for="r6_3" class="seat__label r63" data-row="6" data-seat="3">
-                <input type="checkbox" class="seat" id="r6_3">
-                <span class="seat__number">3</span>
-              </label>
-              <label for="r6_4" class="seat__label r64" data-row="6" data-seat="4">
-                <input type="checkbox" class="seat" id="r6_4">
-                <span class="seat__number">4</span>
-              </label>
-              <label for="r6_5" class="seat__label r65" data-row="6" data-seat="5">
-                <input type="checkbox" class="seat" id="r6_5">
-                <span class="seat__number">5</span>
-              </label>
-              <label for="r6_6" class="seat__label r66" data-row="6" data-seat="6">
-                <input type="checkbox" class="seat" id="r6_6">
-                <span class="seat__number">6</span>
-              </label>
-              <label for="r6_7" class="seat__label r67" data-row="6" data-seat="7">
-                <input type="checkbox" class="seat" id="r6_7">
-                <span class="seat__number">7</span>
-              </label>
-              <label for="r6_8" class="seat__label r68" data-row="6" data-seat="8">
-                <input type="checkbox" class="seat" id="r6_8">
-                <span class="seat__number">8</span>
-              </label>
-              <label for="r6_9" class="seat__label r69" data-row="6" data-seat="9">
-                <input type="checkbox" class="seat" id="r6_9">
-                <span class="seat__number">9</span>
-              </label>
-              <label for="r6_10" class="seat__label r610 last-seat" data-row="6" data-seat="10">
-                <input type="checkbox" class="seat" id="r6_10">
-                <span class="seat__number">10</span>
-              </label>
-
-
-              <label for="r7_1" class="seat__label r71 first-seat" data-row="7" data-seat="1">
-                <input type="checkbox" class="seat" id="r7_1">
-                <span class="seat__number">1</span>
-              </label>
-              <label for="r7_2" class="seat__label r72" data-row="7" data-seat="2">
-                <input type="checkbox" class="seat" id="r7_2">
-                <span class="seat__number">2</span>
-              </label>
-              <label for="r7_3" class="seat__label r73" data-row="7" data-seat="3">
-                <input type="checkbox" class="seat" id="r7_3">
-                <span class="seat__number">3</span>
-              </label>
-              <label for="r7_4" class="seat__label r74" data-row="7" data-seat="4">
-                <input type="checkbox" class="seat" id="r7_4">
-                <span class="seat__number">4</span>
-              </label>
-              <label for="r7_5" class="seat__label r75" data-row="7" data-seat="5">
-                <input type="checkbox" class="seat" id="r7_5">
-                <span class="seat__number">5</span>
-              </label>
-              <label for="r7_6" class="seat__label r76 last-seat" data-row="7" data-seat="6">
-                <input type="checkbox" class="seat" id="r7_6">
-                <span class="seat__number">6</span>
-              </label>
-
-
-              <label for="r8_1" class="seat__label r81 first-seat" data-row="8" data-seat="1">
-                <input type="checkbox" class="seat" id="r8_1">
-                <span class="seat__number">1</span>
-              </label>
-              <label for="r8_2" class="seat__label r82" data-row="8" data-seat="2">
-                <input type="checkbox" class="seat" id="r8_2">
-                <span class="seat__number">2</span>
-              </label>
-              <label for="r8_3" class="seat__label r83" data-row="8" data-seat="3">
-                <input type="checkbox" class="seat" id="r8_3">
-                <span class="seat__number">3</span>
-              </label>
-              <label for="r8_4" class="seat__label r84" data-row="8" data-seat="4">
-                <input type="checkbox" class="seat" id="r8_4">
-                <span class="seat__number">4</span>
-              </label>
-              <label for="r8_5" class="seat__label r85" data-row="8" data-seat="5">
-                <input type="checkbox" class="seat" id="r8_5">
-                <span class="seat__number">5</span>
-              </label>
-              <label for="r8_6" class="seat__label r86" data-row="8" data-seat="6">
-                <input type="checkbox" class="seat" id="r8_6">
-                <span class="seat__number">6</span>
-              </label>
-              <label for="r8_7" class="seat__label r87" data-row="8" data-seat="7">
-                <input type="checkbox" class="seat" id="r8_7">
-                <span class="seat__number">7</span>
-              </label>
-              <label for="r8_8" class="seat__label r88" data-row="8" data-seat="8">
-                <input type="checkbox" class="seat" id="r8_8">
-                <span class="seat__number">8</span>
-              </label>
-              <label for="r8_9" class="seat__label r89" data-row="8" data-seat="9">
-                <input type="checkbox" class="seat" id="r8_9">
-                <span class="seat__number">9</span>
-              </label>
-              <label for="r8_10" class="seat__label r810" data-row="8" data-seat="10">
-                <input type="checkbox" class="seat" id="r8_10">
-                <span class="seat__number">10</span>
-              </label>
-              <label for="r8_11" class="seat__label r811" data-row="8" data-seat="11">
-                <input type="checkbox" class="seat" id="r8_11">
-                <span class="seat__number">11</span>
-              </label>
-              <label for="r8_12" class="seat__label r812 last-seat" data-row="8" data-seat="12">
-                <input type="checkbox" class="seat" id="r8_12">
-                <span class="seat__number">12</span>
-              </label>
-          </fieldset>
-          </form>            
-        </main>
+                  <!---- row 8 --->
+                  <label for="r8_1" class="seat__label r81 first-seat" data-row="8" data-seat="1">
+                    <input type="checkbox" class="seat" id="r8_1">
+                    <span class="seat__number">1</span>
+                  </label>
+                  <label for="r8_2" class="seat__label r82" data-row="8" data-seat="2">
+                    <input type="checkbox" class="seat" id="r8_2">
+                    <span class="seat__number">2</span>
+                  </label>
+                  <label for="r8_3" class="seat__label r83" data-row="8" data-seat="3">
+                    <input type="checkbox" class="seat" id="r8_3">
+                    <span class="seat__number">3</span>
+                  </label>
+                  <label for="r8_4" class="seat__label r84" data-row="8" data-seat="4">
+                    <input type="checkbox" class="seat" id="r8_4">
+                    <span class="seat__number">4</span>
+                  </label>
+                  <label for="r8_5" class="seat__label r85" data-row="8" data-seat="5">
+                    <input type="checkbox" class="seat" id="r8_5">
+                    <span class="seat__number">5</span>
+                  </label>
+                  <label for="r8_6" class="seat__label r86" data-row="8" data-seat="6">
+                    <input type="checkbox" class="seat" id="r8_6">
+                    <span class="seat__number">6</span>
+                  </label>
+                  <label for="r8_7" class="seat__label r87" data-row="8" data-seat="7">
+                    <input type="checkbox" class="seat" id="r8_7">
+                    <span class="seat__number">7</span>
+                  </label>
+                  <label for="r8_8" class="seat__label r88" data-row="8" data-seat="8">
+                    <input type="checkbox" class="seat" id="r8_8">
+                    <span class="seat__number">8</span>
+                  </label>
+                  <label for="r8_9" class="seat__label r89" data-row="8" data-seat="9">
+                    <input type="checkbox" class="seat" id="r8_9">
+                    <span class="seat__number">9</span>
+                  </label>
+                  <label for="r8_10" class="seat__label r810" data-row="8" data-seat="10">
+                    <input type="checkbox" class="seat" id="r8_10">
+                    <span class="seat__number">10</span>
+                  </label>
+                  <label for="r8_11" class="seat__label r811" data-row="8" data-seat="11">
+                    <input type="checkbox" class="seat" id="r8_11">
+                    <span class="seat__number">11</span>
+                  </label>
+                  <label for="r8_12" class="seat__label r812 last-seat" data-row="8" data-seat="12">
+                    <input type="checkbox" class="seat" id="r8_12">
+                    <span class="seat__number">12</span>
+                  </label>
+                </fieldset>
+          </form> 
       </section>
     </article>
   </body>
