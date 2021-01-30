@@ -6,15 +6,15 @@
     <title>Cinema booking</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Quicksand:wght@300;500&display=swap" rel="stylesheet"> 
   </head>
 
   <body>
-    <article class="movie">
-        <section class="movie__media column">
-          <img src="poster.jpg" alt="Alien(1979) poster" class="movie__image" />
-          <button class="movie__play-button"></button>
-        </section>
+    <main class="movie">
+        <article class="poster__container">
+          <button class="movie__play-button"><span class="play"></span></button>
+          <h2 class="poster__heading">ALIEN</h2>
+        </article>
         <header class="movie__heading row">
           <h1 class="movie__title">Alien</h1>
           <span class="time__container">
@@ -33,9 +33,10 @@
 
             <dt class="info__heading">Starring</dt>
             <dd class="list__item">
-              <strong>Tom Skerritt</strong>, <strong>Sigourney Weaver</strong>,
-              <strong>Veronica Cartwright</strong>,
-              <strong>Harry Dean Stanton</strong>
+              <strong class="actor">Tom Skerritt</strong>, 
+              <strong class="actor">Sigourney Weaver</strong>,
+              <strong class="actor">Veronica Cartwright</strong>,
+              <strong class="actor">Harry Dean Stanton</strong>
             </dd>
           </dl>
         </section>
@@ -433,6 +434,6 @@
                 </fieldset>
           </form> 
       </section>
-    </article>
+    </main>
   </body>
 </html>
