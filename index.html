@@ -44,76 +44,84 @@
             <form class="booking__form">  
                 <!---- date --->
                 <fieldset class="date__set" id="date">
-                  <legend>Date</legend>
-                  <input type="radio" id="d202r102-01" name="date" value="202r102-01" />
-                  <label for="d202r102-01" class="date__label">
-                    <time datetime="202r102-01">
-                      <span class="month">Feb</span> <span class="day">01</span>
-                    </time>
-                  </label>
-                  <input type="radio" id="d202r102-02" name="date" value="202r102-02" />
-                  <label for="d202r102-02" class="date__label">
-                    <time datetime="202r102-02">
-                      <span class="month">Feb</span> <span class="day">02</span>
-                    </time>
-                  </label>
-                  <input type="radio" id="d202r102-03" name="date" value="202r102-03" />
-                  <label for="d202r102-03" class="date__label">
-                    <time datetime="202r102-03">
-                      <span class="month">Feb</span> <span class="day">03</span>
-                    </time>
-                  </label>
-                  <input type="radio" id="d202r102-04" name="date" value="202r102-04" />
-                  <label for="d202r102-04" class="date__label">
-                    <time datetime="202r102-04">
-                      <span class="month">Feb</span> <span class="day">04</span>
-                    </time>
-                  </label>
-                  <input type="radio" id="d202r102-05" name="date" value="202r102-05" />
-                  <label for="d202r102-05" class="date__label">
-                    <time datetime="202r102-05">
-                      <span class="month">Feb</span> <span class="day">05</span>
-                    </time>
-                  </label>
-                  <input type="radio" id="d202r102-06" name="date" value="202r102-06" />
-                  <label for="d202r102-06" class="date__label">
-                    <time datetime="202r102-06">
-                      <span class="month">Feb</span> <span class="day">06</span>
-                    </time>
-                  </label>
-                  <input type="radio" id="d202r102-07" name="date" value="202r102-07" />
-                  <label for="d202r102-07" class="date__label">
-                    <time datetime="202r102-07">
-                      <span class="month">Feb</span> <span class="day">07</span>
-                    </time>
-                  </label>
+                  <legend class="legend date__legend">Date</legend>
+
+                  <input type="radio" class="left__radio" name="radio_arrow" id="leftRadio"/>
+                  <label for="leftRadio" class="left__radio_label"><</label>
+                  <input type="radio" class="right__radio" name="radio_arrow" id="rightRadio">
+                  <label for="rightRadio" class="right__radio_label">></label>
+                  
+                  <div class="wrap">
+                    <label for="d2021-02-01" class="date__label">
+                      <input type="radio" id="d2021-02-01" class="date__input" name="date" value="2021-02-01" />
+                      <time datetime="2021-02-01" class="date__wrap">
+                        <span class="month">Feb</span> <span class="day">01</span>
+                      </time>
+                    </label>
+                    <label for="d2021-02-02" class="date__label">
+                      <input type="radio" id="d2021-02-02" class="date__input" name="date" value="2021-02-02" />
+                      <time datetime="2021-02-02" class="date__wrap">
+                        <span class="month">Feb</span> <span class="day">02</span>
+                      </time>
+                    </label>
+                    <label for="d2021-02-03" class="date__label">
+                      <input type="radio" id="d2021-02-03" class="date__input" name="date" value="2021-02-03" />
+                      <time datetime="2021-02-03" class="date__wrap">
+                        <span class="month">Feb</span> <span class="day">03</span>
+                      </time>
+                    </label>
+                    <label for="d2021-02-04" class="date__label">
+                      <input type="radio" id="d2021-02-04" class="date__input" name="date" value="2021-02-04" />
+                      <time datetime="2021-02-04" class="date__wrap">
+                        <span class="month">Feb</span> <span class="day">04</span>
+                      </time>
+                    </label>
+                    <label for="d2021-02-05" class="date__label">
+                      <input type="radio" id="d2021-02-05" class="date__input" name="date" value="2021-02-05" />
+                      <time datetime="2021-02-05" class="date__wrap">
+                        <span class="month">Feb</span> <span class="day">05</span>
+                      </time>
+                    </label>
+                    <label for="d2021-02-06" class="date__label">
+                      <input type="radio" id="d2021-02-06" class="date__input" name="date" value="2021-02-06" />
+                      <time datetime="2021-02-06" class="date__wrap">
+                        <span class="month">Feb</span> <span class="day">06</span>
+                      </time>
+                    </label>
+                    <label for="d2021-02-07" class="date__label">
+                      <input type="radio" id="d2021-02-07" class="date__input" name="date" value="2021-02-07" />
+                      <time datetime="2021-02-07" class="date__wrap">
+                        <span class="month">Feb</span> <span class="day">07</span>
+                      </time>
+                    </label>
+                  </div>
                 </fieldset>
 
                 <!---- time --->
                 <fieldset class="time__set" id="time">
-                  <legend>Time</legend>
-                  <input type="radio" name="time" value="21:00" id="t2r100">
-                  <label for="t2r100" class="time__label">
-                    <time datetime="21:00">
-                        <span class="type">3D</span> <span class="time">21:00</span>
+                  <legend class="legend">Time</legend>
+                  <label for="t21-00" class="time__label">
+                    <input type="radio" name="time" class="time__input" value="21:00" id="t21-00"><time datetim
+                    e="21:00" class="time__wrap">
+                        <span class="type">AM</span> <span class="time">10:00</span>
                     </time>
                   </label>
-                  <input type="radio" name="time" value="22:00" id="t22-00">
                   <label for="t22-00" class="time__label">
-                    <time datetime="22:00">
-                        <span class="type">3D</span> <span class="time">22:00</span>
+                    <input type="radio" name="time" class="time__input" value="22:00" id="t22-00">
+                    <time datetime="22:00" class="time__wrap">
+                        <span class="type">AM</span> <span class="time">12:00</span>
                     </time>
                   </label>
-                  <input type="radio" name="time" value="23:00" id="t23-00">
                   <label for="t23-00" class="time__label">
-                    <time datetime="23:00">
-                        <span class="type">3D</span> <span class="time">23:00</span>
+                    <input type="radio" name="time" class="time__input" value="23:00" id="t23-00">
+                    <time datetime="23:00" class="time__wrap">
+                        <span class="type">PM</span> <span class="time">3:00</span>
                     </time>
                   </label>
-                  <input type="radio" name="time" value="24:00" id="t24-00">
                   <label for="t24-00" class="time__label">
-                    <time datetime="24:00">
-                        <span class="type">3D</span> <span class="time">24:00</span>
+                    <input type="radio" name="time" class="time__input" value="24:00" id="t24-00">
+                    <time datetime="24:00" class="time__wrap">
+                        <span class="type">PM</span> <span class="time">4:00</span>
                     </time>
                   </label>              
                 </fieldset>

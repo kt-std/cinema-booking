@@ -51,8 +51,6 @@ body{
                         "poster form form";
 }
 
-.movie__info {
-}
 .poster__container {
     height: auto;
     min-width: 35vw;
@@ -142,10 +140,12 @@ body{
     grid-area: info;
     padding: var(--padding);
     display: flex;
+    max-height: 250px;
     align-items: center;
     border-top: 1px solid var(--background-color);
     background-color: var(--background-color-darker);
     margin: 0 var(--margin);
+    box-shadow: 0 5px 5px var(--background-color);
 }
 
 .info__heading {
@@ -177,12 +177,17 @@ body{
     padding: 20px 5%;
     grid-area: header;
     margin: auto var(--margin) 0 var(--margin);
-    display: flex;justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: var(--background-color-lighter);
-    text-transform: uppercase;
     box-shadow: 0 5px 5px var(--background-color);
 }
+.movie__heading,
+.legend{
+    background-color: var(--background-color-lighter);
+    text-transform: uppercase;
+}
+
 .movie__title {
     font-weight: var(--thin);
     letter-spacing: 20px;
@@ -207,33 +212,144 @@ body{
 .booking__form {
     margin: 0 var(--margin) auto var(--margin);
     display: grid;
+    overflow: hidden;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
     grid-template-areas: "date time"
                         "cinema cinema";
 }
+.legend{
+    width: 100%;
+    display: inline-block;
+    padding: 10px 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
 
+.date__legend{
+    border-right: 1px solid var(--background-color);
+}
+
+.date__set,
+.time__set{
+    justify-content: space-around;
+    overflow: hidden;
+    border: none;
+    display: flex;
+    background-color: var(--background-color-darker);
+}
 .date__set {
     grid-area: date;
+    position: relative;
 }
-.date__label {
+.left__radio, 
+.right__radio,
+.left__radio_label, 
+.right__radio_label{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
 }
-.month {
+.left__radio_label,
+.left__radio{
+    left: 0;
 }
+.right__radio_label,
+.right__radio{
+    right: 0;
+}
+.left__radio:checked ~ .left__radio_label,
+.right__radio:checked ~ .right__radio_label{
+    color: var(--checked-bg-color);
+}
+
+.left__radio_label, 
+.right__radio_label{
+    cursor: pointer;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    font-weight: var(--bold);
+    justify-content: center;
+    align-items: center;
+}
+.left__radio_label{
+    background-image: linear-gradient(90deg,
+        var(--background-color) 0%, 
+        transparent 100%);
+}
+.right__radio_label{
+    background-image: linear-gradient(270deg,
+        var(--background-color) 0%,
+        transparent 100%);
+}
+
+.wrap{
+    display: flex;
+    margin-left: -40%;
+    margin-right: -40%;
+    transition: .5s;
+    width: 120%;
+    justify-content: space-around;
+}
+.date_label:{
+    cursor: pointer;
+}
+
+.left__radio:checked ~.wrap{
+    margin-left: 0;
+}
+.right__radio:checked ~.wrap{
+    margin-right: 0;
+}
+
+.date__wrap,
+.time__wrap {
+    padding: 10px;
+    display: block;
+    cursor: pointer;
+    flex-grow: 1;
+    min-width: 50px;
+    border-top: 1px solid var(--background-color);
+    box-sizing: border-box;
+    flex-direction: column;
+    transition: .2s;
+}
+
+.date__wrap:hover,
+.time__wrap:hover{
+    background-color: var(--background-color-lighter);
+}
+.date__wrap:focus,
+.time__wrap:focus{
+    border: 1px solid var(--checked-bg-color);
+}
+
+.month, 
+.type,
+.time,
+.day  {
+    font-size: .85em;
+}
+.time,
 .day {
+    
+    font-weight: var(--bold);
 }
 .time__set {
     grid-area: time;
 }
 .time__label {
 }
-.type {
+
+.time__input:checked + .time__wrap,
+.date__input:checked + .date__wrap{
+    background-color: var(--checked-bg-color);
 }
-.time {
-}
+
 .seats_set {
     grid-area: cinema;
-    padding: 20px 40px;
+    padding: 20px 30px;
     margin: auto;
     display: grid;
     box-sizing: border-box;
@@ -249,6 +365,10 @@ body{
 .seats__row {
   
 }
+.left__radio,
+.right__radio,
+.time__input,
+.date__input,
 .seat {
     -moz-appearance: none;    
     -webkit-appearance: none;
