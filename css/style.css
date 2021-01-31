@@ -21,6 +21,7 @@
     --thin: 300;
     --bold: 700;
     --heading-color: white;
+    --mobile-padding: 40px;
 }
 *{
     margin:0;
@@ -40,12 +41,13 @@ body{
     font-weight: var(--thin);
     background-color: var(--background-color);
 }
-.movie {
+.movie__container {
     width: 100%;
     min-height: 100vh;
     display: grid;
     box-sizing: border-box;
     grid-template-rows: repeat(3, auto);
+   /* grid-template-rows: minmax(40px, 1fr) minmax(150px,auto) minmax(1fr, auto);*/
     grid-template-areas: "poster header header"
                         "poster info info"
                         "poster form form";
@@ -174,7 +176,7 @@ body{
     display: grid;
 }
 .movie__heading {
-    padding: 20px 5%;
+    padding: 10px 5%;
     grid-area: header;
     margin: auto var(--margin) 0 var(--margin);
     display: flex;
@@ -263,6 +265,11 @@ body{
     color: var(--checked-bg-color);
 }
 
+.left__radio:focus ~ .left__radio_label,
+.right__radio:focus ~ .right__radio_label{
+    box-shadow: inset 0 0 3px var(--checked-bg-color);
+}
+
 .left__radio_label, 
 .right__radio_label{
     cursor: pointer;
@@ -273,6 +280,21 @@ body{
     justify-content: center;
     align-items: center;
 }
+.left__radio_label,
+.right__radio_label{
+    box-shadow: inset 0 0 3px var(--background-color-darker);
+    background-color: var(--background-color-lighter);
+}
+.time__set:focus-within > .time__legend,
+.date__set:focus-within > .date__legend {
+    color: var(--checked-bg-color);
+    text-shadow: 0 0 5px var(--checked-bg-color);
+}
+.time__set:focus-within > .wrap__date,
+.date__set:focus-within > .wrap{
+   background-color: rgba(0,77,64 ,.1);
+}
+/*
 .left__radio_label{
     background-image: linear-gradient(90deg,
         var(--background-color) 0%, 
@@ -282,16 +304,26 @@ body{
     background-image: linear-gradient(270deg,
         var(--background-color) 0%,
         transparent 100%);
-}
+}*/
 
 .wrap{
-    display: flex;
+    display: grid;
     margin-left: -40%;
     margin-right: -40%;
     transition: .5s;
     width: 120%;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-flow: row;
     justify-content: space-around;
 }
+
+.wrap__date{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: row;
+}
+
 .date_label:{
     cursor: pointer;
 }
@@ -332,8 +364,7 @@ body{
     font-size: .85em;
 }
 .time,
-.day {
-    
+.day {    
     font-weight: var(--bold);
 }
 .time__set {
@@ -347,14 +378,16 @@ body{
     background-color: var(--checked-bg-color);
 }
 
+
 .seats_set {
     grid-area: cinema;
     padding: 20px 30px;
-    margin: auto;
+    margin: 35px auto 20px auto;
     display: grid;
     box-sizing: border-box;
     width: 50%;
-    justify-content:center;
+    justify-items:center;
+    justify-content: center;
     grid-gap: .4em;
     background-color: #111;
     counter-reset: row;
@@ -362,9 +395,23 @@ body{
     position: relative;
     border:none;
 }
-.seats__row {
-  
+.seats_set::before{
+    filter: drop-shadow(0 0 4px var(--accent-color));
+    content: 'screen';
+    height: 40px;
+    text-transform: uppercase;
+    font-size: .7em;
+    letter-spacing: 2px;
+    border-color:transparent;
+    border-top:1px solid var(--checked-bg-color);
+    position: absolute;
+    border-radius: 50% 50% 0 0;
+    display: block;
+    width: 95%;
+    background-color: transparent;
+    top:-10px;
 }
+
 .left__radio,
 .right__radio,
 .time__input,
@@ -378,7 +425,6 @@ body{
     width: 1px;
     position: absolute;
 }
-
 .seat__number{
     width: 100%;
     height: 100%;
@@ -451,21 +497,56 @@ body{
 .last-seat::before{
     right: 10px;
 }
-@media (max-width: 500px){
+@media (max-width: 768px){
     .seat__label{
         width: 18px;
         height: 18px;
     }
     .first-seat::before{
-        left: 5px;
+        left: 15px;
     }
     .last-seat::before{
-        right: 5px;
+        right: 15px;
     }
     .seats_set {
         padding: 20px;
         width: 100%;
         grid-gap: 8px;
+    }
+    .movie__container{
+        grid-template-areas: "poster"
+                             "header" 
+                             "info" 
+                             "form"; 
+    }
+    .poster__container{
+        min-height: 60vh;
+        background-image: linear-gradient(270deg, 
+            rgba(0,0,0,.4) 0%, transparent 100%),
+            linear-gradient(0deg, 
+            rgba(17,17,17,.6) 0%, transparent 100%), 
+            url(../assets/poster.jpg);
+    }
+    .booking__form{
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: "date"
+                             "time" 
+                             "cinema"; 
+    }
+    .seats_set{
+        margin: 50px 0;
+        padding: var(--mobile-padding);
+    }
+    .movie__heading{
+        margin: 0;
+        padding: 20px var(--mobile-padding);
+    }
+    .movie__data{
+        margin: 0;
+        padding: 30px var(--mobile-padding);
     }
 }
 

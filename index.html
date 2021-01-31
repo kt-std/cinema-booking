@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <main class="movie">
+    <main class="movie__container">
         <article class="poster__container">
           <button class="movie__play-button"><span class="play"></span></button>
           <h2 class="poster__heading">ALIEN</h2>
@@ -50,7 +50,7 @@
                   <label for="leftRadio" class="left__radio_label"><</label>
                   <input type="radio" class="right__radio" name="radio_arrow" id="rightRadio">
                   <label for="rightRadio" class="right__radio_label">></label>
-                  
+
                   <div class="wrap">
                     <label for="d2021-02-01" class="date__label">
                       <input type="radio" id="d2021-02-01" class="date__input" name="date" value="2021-02-01" />
@@ -99,7 +99,8 @@
 
                 <!---- time --->
                 <fieldset class="time__set" id="time">
-                  <legend class="legend">Time</legend>
+                  <legend class="legend time__legend">Time</legend>
+                  <div class="wrap__date">
                   <label for="t21-00" class="time__label">
                     <input type="radio" name="time" class="time__input" value="21:00" id="t21-00"><time datetim
                     e="21:00" class="time__wrap">
@@ -123,7 +124,8 @@
                     <time datetime="24:00" class="time__wrap">
                         <span class="type">PM</span> <span class="time">4:00</span>
                     </time>
-                  </label>              
+                  </label>  
+                  </div>            
                 </fieldset>
 
                 <!---- seats --->
