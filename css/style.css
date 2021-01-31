@@ -2,9 +2,10 @@
     --background-color:#111;
     --background-color-lighter:#181818;
     --background-color-hover:rgba(0,77,64 ,.2);
+    --background-hover:rgba(0,77,64 ,.8);
     --background-color-darker:#141414;
     --accent-color: rgba(0,137,123 ,1);
-    --checked-bg-color:rgba(0,96,100 ,1);    
+    --checked-bg-color:rgba(0,96,100 ,1);     
     --checked-font-color:white;
     --disabled-bg-color:#444;
     --disabled-font-color:#666;
@@ -23,7 +24,21 @@
     --bold: 700;
     --heading-color: white;
     --mobile-padding: 40px;
+    --seat-color:#222;
+    --border-radius: 2px;
+    --actor-border:1px solid rgba(0,96,100 ,.8);
+    --actor-bg: rgba(0,96,100 ,.1);
+    --barcode: 'Libre Barcode 39 Extended Text', cursive;
+    --small: 14px;
+    --medium: 16px;
 }
+
+::-moz-selection ,
+::selection { 
+    color: white;
+    background-color: var(--checked-bg-color);
+}
+
 *{
     margin:0;
     padding: 0;
@@ -38,7 +53,7 @@ strong, b{
 }
 
 body{
-    font-size: 16px;
+    font-size: var(--medium);
     font-weight: var(--thin);
     background-color: var(--background-color);
 }
@@ -48,7 +63,6 @@ body{
     display: grid;
     box-sizing: border-box;
     grid-template-rows: repeat(3, auto);
-   /* grid-template-rows: minmax(40px, 1fr) minmax(150px,auto) minmax(1fr, auto);*/
     grid-template-areas: "poster header header"
                         "poster info info"
                         "poster form form";
@@ -158,11 +172,11 @@ body{
 }
 
 .actor{
-    background-color: rgba(0,96,100 ,.1);
+    background-color: var(--actor-bg);
     border-radius: 15px;
-    border: 1px solid rgba(0,96,100 ,.8);
+    border: var(--actor-border);
     padding: 1px 10px;
-    font-size: 15px;
+    font-size: var(--small);
     display: inline-block;
     box-sizing: border-box;
     margin-top: 5px;
@@ -220,7 +234,7 @@ body{
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
     grid-template-areas: "date time"
-                        "cinema cinema";
+                        "cinema ticket";
 }
 .legend{
     width: 100%;
@@ -354,7 +368,7 @@ body{
 .type,
 .time,
 .day  {
-    font-size: .85em;
+    font-size: .8em;
 }
 .time,
 .day {    
@@ -371,15 +385,22 @@ body{
     background-color: var(--checked-bg-color);
 }
 
+.hall{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: cinema;
+}
 
 .seats_set {
-    grid-area: cinema;
-    padding: 30px;
-    margin: 50px auto 0 auto;
+    padding: 30px 30px 10px 30px;
+    margin: 0 auto 0 auto;
     display: grid;
     box-sizing: border-box;
     width: 50%;
     justify-items:center;
+    align-self: center;
     justify-content: center;
     grid-gap: .4em;
     counter-reset: row;
@@ -424,17 +445,39 @@ body{
     height: 100%;
     font-size: var(--font-size);
     transition: .5s;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     align-items: center;
     justify-content: center;
     display: flex;
-    background-color: #222;
+    background-color: var(--seat-color);
     color: #555;
 }
 
 .seat:checked + .seat__number {
     color:var(--checked-font-color);
     background-color: var(--checked-bg-color);
+}
+
+.seat__label::after{
+    content: 'Seat ' attr(data-seat) ' 💺 , row 'attr(data-row)'';
+    position: absolute;
+    transition: .3s;
+    visibility: hidden;
+    border:2px solid var(--background-color-hover);
+    box-sizing: border-box;
+    font-size: .7em;
+    border-radius: var(--border-radius);
+    display: flex;
+    opacity: 0;
+    white-space: nowrap;
+    background-color: var(--seat-color);
+    padding: 2px 10px;
+    transform: translate(40%);
+    margin-bottom: 60px;
+}
+.seat__label:focus-within::after{
+    visibility: visible;
+    opacity: 1;
 }
 .seat:disabled + .seat__number {
     cursor: not-allowed;
@@ -491,6 +534,130 @@ body{
 .last-seat::before{
     right: 10px;
 }
+
+.hall__legend{
+    grid-area: legend;
+    display: flex;
+    align-items: center;
+    justify-self:center;
+    font-size: .9em;
+}
+.hall__hint::before{
+    content: '';
+    width: 10px;
+    margin: 0 10px; 
+    height: 10px;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    display: inline-block;
+}
+.reserved.hall__hint::before{
+    background-color: var(--disabled-bg-color);
+}
+.available.hall__hint::before{
+    background-color: var(--seat-color);
+}
+.chosen.hall__hint::before{
+    background-color: var(--checked-bg-color);
+}
+
+.booking__info{
+    grid-area: ticket;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    margin: 40px;
+    width: 250px;
+
+    box-sizing: border-box;
+    color: black;
+}
+.ticket{
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    border-radius: 1px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: var(--margin);
+}
+.booking_info__heading{
+    text-transform: uppercase;
+    font-weight: var(--thin);
+    font-size: 20px;
+    color: black;letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+.barcode{
+    font-family: var(--barcode);
+    font-size: 40px;
+    font-weight: 300;
+    padding: 10px 0 0 0;
+    border-top: 5px dotted var(--background-color-darker);
+    color: black;
+    position: relative;
+    letter-spacing: 5px;
+}
+.barcode::before,
+.barcode::after{
+    content: '';
+    height: 35px;
+    width: 35px;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    border:none;
+    top: 0;
+    transform: translate(0,-50%);
+    background-color: var(--background-color-darker);
+}
+.barcode::after{
+    right: -40px;
+}
+.barcode::before{
+    left: -40px;
+}
+.booking__button{
+    width: 100%;
+    background-color: var(--checked-bg-color);
+    border:none;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.booking__button:hover{
+    box-shadow: 0 0 5px var(--background-color);
+}
+
+.ticket__info{
+    display: grid;
+    align-content: space-between;
+    grid-gap: 15px;
+    padding-bottom: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.ticket__value,
+.ticket__movie_heading{
+    color:var(--checked-bg-color);
+    font-weight: var(--bold);
+    font-family: 'Arial';
+    text-transform: uppercase;
+}
+.ticket__description,
+.ticket__description > *{
+    color: black;
+    font-size: var(--small);
+}
+
+.ticket__movie_heading{
+    margin-bottom: 20px;
+    color: black;
+}
 @media (max-width: 768px){
     .wrap{
         width: 100vw;
@@ -521,7 +688,8 @@ body{
         grid-template-columns: 1fr;
         grid-template-areas: "date"
                              "time" 
-                             "cinema"; 
+                             "cinema"
+                             "ticket"; 
     }
     .seats_set{
         margin: 40px 0 20px 0;
@@ -544,7 +712,7 @@ body{
         padding: 30px var(--mobile-padding);
     }
     .seats_set {
-        padding: 40px 20px;
+        padding: 40px 20px 20px 20px;
         grid-gap: 8px;
     }
 }
@@ -595,7 +763,8 @@ body{
 
 @media (min-width: 600px) and (max-width: 768px){
     .wrap{
-        margin: 0;
+        margin-right: -20px;
+        margin-left: -20px;
     }
     .poster__container{
         min-height: 45vh;
@@ -646,6 +815,16 @@ body{
 
     .booking__form{
         grid-template-areas: "date time"
-                             "cinema cinema"; 
+                             "cinema ticket"; 
+    }
+
+}
+@media (min-width: 1025px) and (max-width: 1365px){
+    .poster__container{
+        min-height: 40vh;
+        min-width: 20vw;
+    }
+    .booking__info{
+        margin: 20px;
     }
 }
