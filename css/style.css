@@ -846,7 +846,9 @@ body{
     align-items: center;
     justify-content: center;
 }
-
+.booking__button .buy__icon{
+    color: white;
+}
 .buy__icon::before{
     content:'';
     margin-right: 8px;
