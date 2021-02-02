@@ -13,8 +13,8 @@
     <main class="movie__container">
 
       <!-- poster -->
-      <article class="poster__container">
-        <button class="movie__play-button" name="button" value="Play trailer"><span class="play"></span></button>
+      <article class="poster__container ">
+        <button class="movie__play-button flex-center" name="button" value="Play trailer"><span class="play"></span></button>
         <h2 class="poster__heading">ALIEN</h2>
       </article>
 
@@ -49,10 +49,10 @@
           <fieldset class="date__set" id="date">
             <legend class="legend date__legend">Date</legend>
             <!--div left / right controls -->
-            <input type="radio" id="leftRadio" class="radio left__radio" name="radio_arrow" value="left" checked />
-            <label for="leftRadio" class="left__radio_label">&lt;</label>
-            <input type="radio" id="rightRadio" class="radio right__radio"  name="radio_arrow" value="right">
-            <label for="rightRadio" class="right__radio_label">&gt;</label>
+            <input type="radio" id="leftRadio" class="radio left__radio " name="radio_arrow" value="left" checked />
+            <label for="leftRadio" class="left__radio_label flex-center">&lt;</label>
+            <input type="radio" id="rightRadio" class="radio right__radio "  name="radio_arrow" value="right">
+            <label for="rightRadio" class="right__radio_label flex-center">&gt;</label>
             <!-- dates wrapper -->
             <div class="wrap">
               <label for="d2021-02-01" class="date__label">
@@ -463,7 +463,7 @@
             </fieldset>
 
             <!-- seats legend -->                 
-            <div class="hall__legend">
+            <div class="hall__legend flex-center">
               <p class="hall__hint reserved">reserved</p>
               <p class="hall__hint available">available</p>
               <p class="hall__hint chosen">chosen</p>
@@ -472,7 +472,7 @@
           </div>
 
           <!-- ticket -->
-          <div class="booking__info">
+          <div class="booking__info flex-center">
             <article class="ticket">
               <h3 class="ticket__movie_heading">Movie: Alien</h3>
               <dl class="ticket__info">
@@ -495,7 +495,7 @@
               </dl>
               <h4 class="barcode">ALIEN</h4>
             </article>
-            <button class="booking__button" id="submit" name="buy" value="buy"><span class="buy__icon">BUY</span></button>
+            <button class="booking__button" id="submit" name="buy" value="buy"><span class="buy__icon flex-center">BUY</span></button>
           </div>
 
         </form> 
