@@ -4,7 +4,7 @@
     --background-color-hover:rgba(0,77,64 ,.2);
     --background-hover:rgba(0,77,64 ,.8);
     --background-color-darker:#141414;
-    --accent-color: rgba(0,137,123 ,1);
+    --accent-color: rgba(0,96,100,.7);
     --checked-bg-color:rgba(0,96,100 ,1);     
     --checked-font-color:white;
     --disabled-bg-color:#444;
@@ -46,6 +46,7 @@
     outline: none;
     line-height: 1.2em;
     color: var(--font-color);
+    box-sizing: border-box;
 }
 
 strong, b{
@@ -307,7 +308,7 @@ body{
     text-shadow: 0 0 5px var(--checked-bg-color);
 }
 .time__set:focus-within > .wrap__date,
-.date__set:focus-within > .wrap{
+.date__set:focus-within  > .wrap{
    background-color: rgba(0,77,64 ,.1);
 }
 
@@ -386,15 +387,85 @@ body{
 }
 
 .hall{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     grid-area: cinema;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-gap: 15px;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "a b c d"
+                         "hall hall hall hall"
+                         "legend legend legend legend";
+    
+}
+.hall__type {
+    width: 80%;
+    display: flex;
+    margin-bottom: 15px;    
+    border: none;
+    justify-content: space-around;
 }
 
+.hall__legend {
+    border: none;
+    transition: .3s;
+    padding: 0;
+    background-color: transparent;
+}
+.hall__type:focus-within .hall__legend {
+    color: var(--checked-bg-color);
+    text-shadow: 0 0 5px var(--checked-bg-color);
+}
+.A{
+    grid-area: a;
+}
+.B{
+    grid-area: b;
+}
+.C{
+    grid-area: c;
+}
+.D{
+    grid-area: d;
+}
+
+
+.hall_radio:hover{
+    background-color: var(--background-color-lighter);  
+    box-shadow: 0 0 5px var(--checked-bg-color);
+}
+.type__radio:checked +.hall_radio{
+    color: white;
+    background-color: var(--checked-bg-color);  
+}
+
+.type__radio:focus + .hall_radio{
+    box-shadow: 0 0 5px var(--checked-bg-color);
+    background-color: var(--actor-bg);
+}
+
+.hall_radio {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    float: right;
+    background-color: var(--background-color-darker);
+    align-items: center;
+    justify-content: center;
+    font-size: calc(var(--small)/1.2);
+    border-radius: 50%;
+    border: var(--actor-border);
+    transition: .5s;
+}
+
+
 .seats_set {
-    padding: 30px 30px 10px 30px;
+    grid-area: hall;
+    padding: 40px 30px 0 30px;
     margin: 0 auto 0 auto;
     display: grid;
     box-sizing: border-box;
@@ -424,13 +495,15 @@ body{
     display: block;
     width: 95%;
     background-color: transparent;
-    top:-10px;
+    top:0px;
+    transition: .5s;
 }
 
 .left__radio,
 .right__radio,
 .time__input,
 .date__input,
+.type__radio,
 .seat {
     -moz-appearance: none;    
     -webkit-appearance: none;
@@ -459,7 +532,7 @@ body{
 }
 
 .seat__label::after{
-    content: 'Seat ' attr(data-seat) ' 💺 , row 'attr(data-row)'';
+    content: ' 💺    ' attr(data-seat) ', row 'attr(data-row)'';
     position: absolute;
     transition: .3s;
     visibility: hidden;
@@ -471,8 +544,8 @@ body{
     opacity: 0;
     white-space: nowrap;
     background-color: var(--seat-color);
-    padding: 2px 10px;
-    transform: translate(40%);
+    padding: 2px 5px;
+    
     margin-bottom: 60px;
 }
 .seat__label:focus-within::after{
@@ -501,24 +574,129 @@ body{
     display: inline-flex;
 }
 
-.r11, .r21, .r81{
+/* Hall type A seats layout */
+
+.A:checked ~ .seats_set > .r11,
+.A:checked ~ .seats_set > .r21, 
+.A:checked ~ .seats_set > .r81{
     grid-column-start: 1;
 }
-.r13{
+.A:checked ~ .seats_set > .r13{
     grid-column-start: 5;
 }
-.r17{
+.A:checked ~ .seats_set > .r17{
     grid-column-start: 11;
 }
-.r31,.r41,.r51,.r61{
+.A:checked ~ .seats_set > .r31,
+.A:checked ~ .seats_set > .r41,
+.A:checked ~ .seats_set > .r51,
+.A:checked ~ .seats_set > .r61{
     grid-column-start: 2;
 }
-.r71{
+.A:checked ~ .seats_set > .r71{
     grid-column-start: 4;
 }
-.r35, .r45{
+.A:checked ~ .seats_set > .r35, 
+.A:checked ~ .seats_set > .r45{
     grid-column-start: 8;
 }
+
+/* Hall type B seats layout */
+
+.B:checked ~ .seats_set > .r11,
+.B:checked ~ .seats_set > .r21, 
+.B:checked ~ .seats_set > .r31,
+.B:checked ~ .seats_set > .r41,
+.B:checked ~ .seats_set > .r51,
+.B:checked ~ .seats_set > .r81{
+    grid-column-start: 1;
+}
+.B:checked ~ .seats_set > .r61{
+    grid-column-start: 2;
+}
+.B:checked ~ .seats_set > .r71{
+    grid-column-start: 4;
+}
+.B:checked ~ .seats_set > .r13,
+.B:checked ~ .seats_set > .r33,
+.B:checked ~ .seats_set > .r43{
+    grid-column-start: 4;
+}
+.B:checked ~ .seats_set > .r15,
+.B:checked ~ .seats_set > .r35,
+.B:checked ~ .seats_set > .r45{
+    grid-column-start: 8;
+}
+.B:checked ~ .seats_set > .r17,
+.B:checked ~ .seats_set > .r37,
+.B:checked ~ .seats_set > .r47
+{
+    grid-column-start: 11;
+}
+.B:checked ~ .seats_set > .r56
+{
+    grid-column-start: 8;
+}
+
+/* Hall type C seats layout */
+
+.C:checked ~ .seats_set > .r11,
+.C:checked ~ .seats_set > .r21, 
+.C:checked ~ .seats_set > .r31,
+.C:checked ~ .seats_set > .r41,
+.C:checked ~ .seats_set > .r81{
+    grid-column-start: 1;
+}
+.C:checked ~ .seats_set > .r61,
+.C:checked ~ .seats_set > .r51, 
+.C:checked ~ .seats_set > .r71{
+    grid-column-start: 2;
+}
+
+.C:checked ~ .seats_set > .r13{
+    grid-column-start: 4;
+}
+.C:checked ~ .seats_set > .r15{
+    grid-column-start: 8;
+}
+.C:checked ~ .seats_set > .r17,
+.C:checked ~ .seats_set > .r47,
+.C:checked ~ .seats_set > .r37{
+    grid-column-start: 11;
+}
+.C:checked ~ .seats_set > .r74{
+    grid-column-start: 9;
+}
+
+.C:checked ~ .seats_set > .r33,
+.C:checked ~ .seats_set > .r43{
+    grid-column-start: 5;
+}
+/* Hall type D seats layout */
+.D:checked ~ .seats_set > .r11,
+.D:checked ~ .seats_set > .r21, 
+.D:checked ~ .seats_set > .r31,
+.D:checked ~ .seats_set > .r41,
+.D:checked ~ .seats_set > .r61,
+.D:checked ~ .seats_set > .r71,
+.D:checked ~ .seats_set > .r51,
+.D:checked ~ .seats_set > .r81{
+    grid-column-start: 1;
+}
+
+.D:checked ~ .seats_set > .r15,
+.D:checked ~ .seats_set > .r35,
+.D:checked ~ .seats_set > .r45{
+    grid-column-start: 9;
+}
+.D:checked ~ .seats_set > .r56,
+.D:checked ~ .seats_set > .r66{
+    grid-column-start: 8;
+}
+.D:checked ~ .seats_set > .r74{
+    grid-column-start: 10;
+}
+
 .first-seat::before{
     counter-increment: row;
     left: 10px;
@@ -626,12 +804,16 @@ body{
     cursor: pointer;
     text-transform: uppercase;
     box-sizing: border-box;
-    height: 40px;
+    height: 48px;
     border-radius: 5px;
 }
 
 .booking__button:hover{
-    box-shadow: 0 0 5px var(--background-color);
+    background-color: var(--accent-color);
+}
+.booking__button:focus{
+    box-shadow: 0 0 5px var(--checked-bg-color);
+    outline: none;
 }
 
 .ticket__info{
@@ -657,6 +839,25 @@ body{
 .ticket__movie_heading{
     margin-bottom: 20px;
     color: black;
+}
+.buy__icon{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy__icon::before{
+    content:'';
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../assets/basket.svg);
+
 }
 @media (max-width: 768px){
     .wrap{
@@ -692,7 +893,7 @@ body{
                              "ticket"; 
     }
     .seats_set{
-        margin: 40px 0 20px 0;
+        margin: 10px 0 0 0;
         padding: var(--mobile-padding) 0;
 
     }
@@ -714,6 +915,9 @@ body{
     .seats_set {
         padding: 40px 20px 20px 20px;
         grid-gap: 8px;
+    }
+    .hall_radio{
+        margin-top: 20px;
     }
 }
 
@@ -779,8 +983,11 @@ body{
         height: 25px;
         width: 25px;
     }
+    .hall_radio{
+        margin-top: 30px;
+    }
     .seats_set{
-        margin-top: 60px;
+        margin-top: 20px;
         width: 75%;
         justify-self:center;
     }
@@ -809,6 +1016,11 @@ body{
         margin: 0;
         align-self: stretch;
     }
+
+    .hall_radio{
+        margin-top: 20px;
+    }
+
     .movie__data{
         margin: 0;
     }

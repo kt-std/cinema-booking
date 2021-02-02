@@ -11,14 +11,20 @@
 
   <body>
     <main class="movie__container">
+
+      <!-- poster -->
       <article class="poster__container">
         <button class="movie__play-button" name="button" value="Play trailer"><span class="play"></span></button>
         <h2 class="poster__heading">ALIEN</h2>
       </article>
+
+      <!-- movie heading -->
       <header class="movie__heading row">
         <h1 class="movie__title">Alien</h1>
         <span class="time__container"><time datetime="PT1H57M">1h 57m</time></span>
       </header>
+
+      <!-- movie info -->
       <section class="movie__data">
         <dl class="info__list">
           <dt class="info__heading">Director</dt>
@@ -34,16 +40,19 @@
           </dd>
         </dl>
       </section>
+
+      <!-- booking form -->
       <section class="movie__booking">
         <form class="booking__form">  
+
           <!-- date picker -->
           <fieldset class="date__set" id="date">
             <legend class="legend date__legend">Date</legend>
             <!--div left / right controls -->
-            <input type="radio" id="leftRadio" class="left__radio" name="radio_arrow" value="left" />
+            <input type="radio" id="leftRadio" class="radio left__radio" name="radio_arrow" value="left" checked />
             <label for="leftRadio" class="left__radio_label">&lt;</label>
-            <input type="radio" id="rightRadio" class="right__radio"  name="radio_arrow" value="right">
-            <label for="rightRadio" class="right__radio_label">></label>
+            <input type="radio" id="rightRadio" class="radio right__radio"  name="radio_arrow" value="right">
+            <label for="rightRadio" class="right__radio_label">&gt;</label>
             <!-- dates wrapper -->
             <div class="wrap">
               <label for="d2021-02-01" class="date__label">
@@ -125,6 +134,20 @@
 
           <!-- seats picker -->
           <div class="hall">
+
+            <!-- hall type picker -->
+           <!-- <fieldset class="hall__type" name="type_picker">
+              <legend class="legend hall__legend">Hall type</legend>-->
+              <input type="radio" id="hall_type_A" class="type__radio A" name="type_picker" value="A" checked>
+              <label for="hall_type_A" class="hall_radio">A</label>
+              <input type="radio" id="hall_type_B" class="type__radio B"  name="type_picker" value="B">
+              <label for="hall_type_B" class="hall_radio">B</label>
+              <input type="radio" id="hall_type_C" class="type__radio C"  name="type_picker" value="C">
+              <label for="hall_type_C" class="hall_radio">C</label>
+              <input type="radio" id="hall_type_D" class="type__radio D"  name="type_picker" value="D">
+              <label for="hall_type_D" class="hall_radio">D</label>
+           <!-- </fieldset>-->
+
             <fieldset class="seats_set">
               <!-- row 1 -->
               <label for="r1_1" class="seat__label r11 first-seat" data-row="1" data-seat="1">
@@ -437,13 +460,18 @@
                 <input type="checkbox" class="seat" id="r8_12" name="r8_12" value="8_12">
                 <span class="seat__number">12</span>
               </label>
-            </fieldset>                
+            </fieldset>
+
+            <!-- seats legend -->                 
             <div class="hall__legend">
               <p class="hall__hint reserved">reserved</p>
               <p class="hall__hint available">available</p>
               <p class="hall__hint chosen">chosen</p>
             </div>
+
           </div>
+
+          <!-- ticket -->
           <div class="booking__info">
             <article class="ticket">
               <h3 class="ticket__movie_heading">Movie: Alien</h3>
@@ -467,8 +495,9 @@
               </dl>
               <h4 class="barcode">ALIEN</h4>
             </article>
-            <button class="booking__button" id="submit" name="buy" value="buy">BUY</button>
+            <button class="booking__button" id="submit" name="buy" value="buy"><span class="buy__icon">BUY</span></button>
           </div>
+
         </form> 
       </section>
     </main>
