@@ -42,7 +42,7 @@
 
       <!-- booking form -->
       <section class="movie__booking">
-        <form class="booking__form">  
+        <form class="booking__form" id="bookingForm">  
 
           <!-- date picker -->
           <fieldset class="date__set" id="date">
@@ -53,7 +53,7 @@
             <input type="radio" id="rightRadio" class="radio right__radio "  name="radio_arrow" value="right">
             <label for="rightRadio" class="right__radio_label flex-center">&gt;</label>
             <!-- dates wrapper -->
-            <div class="wrap">
+            <div class="wrap" id="datesWrapper">
               <label for="d2021-02-01" class="date__label">
                 <input type="radio" id="d2021-02-01" class="date__input" name="date" value="2021-02-01" />
                 <time datetime="2021-02-01" class="date__wrap">
@@ -220,15 +220,15 @@
                 <span class="seat__number">9</span>
               </label>
               <label for="r2_10" class="seat__label r210" data-row="2" data-seat="10">
-                <input type="checkbox" class="seat" id="r2_10" name="r2_1" value="2_1">
+                <input type="checkbox" class="seat" id="r2_10" name="r2_1" value="2_10">
                 <span class="seat__number">10</span>
               </label>
               <label for="r2_11" class="seat__label r211" data-row="2" data-seat="11">
-                <input type="checkbox" class="seat" id="r2_11" name="r2_1" value="2_1">
+                <input type="checkbox" class="seat" id="r2_11" name="r2_1" value="2_11">
                 <span class="seat__number">11</span>
               </label>
               <label for="r2_12" class="seat__label r212 last-seat" data-row="2" data-seat="12">
-                <input type="checkbox" class="seat" id="r2_12" name="r2_1" value="2_1">
+                <input type="checkbox" class="seat" id="r2_12" name="r2_1" value="2_12">
                 <span class="seat__number">12</span>
               </label>
 
@@ -477,19 +477,19 @@
               <dl class="ticket__info">
                 <div>
                   <dt class="ticket__value">Date</dt>
-                  <dd class="ticket__description"><time datetime="2021-02-03">03.02.2021</time></dd>
+                  <dd class="ticket__description" id="dateContainer"><time datetime="" id="ticketDate"></time></dd>
                 </div>
                 <div>
-                  <dt class="ticket__value">Seat</dt>
-                  <dd class="ticket__description">R1S1, R2S2</dd>
+                  <dt class="ticket__value">Seats</dt>
+                  <dd class="ticket__description" id="seatsContainer"></dd>
                 </div>
                 <div>
                   <dt class="ticket__value">Hall</dt>
-                  <dd class="ticket__description">A</dd>
+                  <dd class="ticket__description" id="hallContainer"></dd>
                 </div>
                 <div>
-                  <dt class="ticket__value">Order</dt>
-                  <dd class="ticket__description">178546</dd>
+                  <dt class="ticket__value">Time</dt>
+                  <dd class="ticket__description"><time datetime="" id="ticketTime"></time></dd>
                 </div> 
               </dl>
               <h4 class="barcode">ALIEN</h4>
@@ -500,5 +500,6 @@
         </form> 
       </section>
     </main>
+    <script src="js/script.js"></script>
   </body>
 </html>

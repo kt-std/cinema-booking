@@ -588,7 +588,6 @@ body {
     border-radius: var(--border-radius);
     border: 2px solid var(--background-color-hover);
 }
-
 .seat__label:focus-within::after {
     visibility: visible;
     opacity: 1;
@@ -890,6 +889,7 @@ body {
     }
 
     .poster__container {
+        position: relative;
         min-height: 60vh;
         background-image: linear-gradient(270deg,
             rgba(0, 0, 0, .4) 0%, transparent 100%),
@@ -1084,3 +1084,16 @@ body {
         margin: 20px;
     }
 }
+@media (min-width: 1365px) {
+    .poster__container {
+        position: fixed;
+    }
+    .movie__heading,
+    .movie__data,
+    .movie__booking{
+        margin-left: 35vw;
+    }
+}
+
+
+
