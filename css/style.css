@@ -1091,9 +1091,13 @@ body {
     .movie__heading,
     .movie__data,
     .movie__booking{
-        margin-left: 35vw;
+        margin-left: calc(35vw + 40px);
     }
 }
 
-
-
+.booking__button:disabled,
+.booking__button:disabled:hover{
+    cursor: not-allowed;
+    background-color: var(--seat-color);
+    opacity: .8;
+}

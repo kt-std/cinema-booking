@@ -55,7 +55,7 @@
             <!-- dates wrapper -->
             <div class="wrap" id="datesWrapper">
               <label for="d2021-02-01" class="date__label">
-                <input type="radio" id="d2021-02-01" class="date__input" name="date" value="2021-02-01" />
+                <input type="radio" id="d2021-02-01" class="date__input" name="date" value="2021-02-01" checked />
                 <time datetime="2021-02-01" class="date__wrap">
                   <span class="month">Feb</span> <span class="day">01</span>
                 </time>
@@ -105,7 +105,7 @@
             <!-- time wrapper -->
             <div class="wrap__date">
               <label for="t10-00" class="time__label">
-                <input type="radio" id="t10-00" class="time__input" name="time" value="10:00">
+                <input type="radio" id="t10-00" class="time__input" name="time" value="10:00" checked >
                 <time datetime="10:00" class="time__wrap">
                     <span class="type">AM</span> <span class="time">10:00</span>
                 </time>
@@ -477,7 +477,7 @@
               <dl class="ticket__info">
                 <div>
                   <dt class="ticket__value">Date</dt>
-                  <dd class="ticket__description" id="dateContainer"><time datetime="" id="ticketDate"></time></dd>
+                  <dd class="ticket__description" id="ticketDate"></dd>
                 </div>
                 <div>
                   <dt class="ticket__value">Seats</dt>
@@ -489,12 +489,12 @@
                 </div>
                 <div>
                   <dt class="ticket__value">Time</dt>
-                  <dd class="ticket__description"><time datetime="" id="ticketTime"></time></dd>
+                  <dd class="ticket__description" id="ticketTime"></dd>
                 </div> 
               </dl>
               <h4 class="barcode">ALIEN</h4>
             </article>
-            <button class="booking__button" id="submit" name="buy" value="buy"><span class="buy__icon flex-center">BUY</span></button>
+            <button class="booking__button" id="submit" name="buy" value="buy" disabled><span class="buy__icon flex-center">BUY</span></button>
           </div>
 
         </form> 
